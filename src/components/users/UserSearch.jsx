@@ -4,7 +4,7 @@ import GithubContext from '../../context/github/GithubContext';
 function UserSearch() {
     const [text, setText] = useState('')
 
-    const {users, searchUsers} = useContext(GithubContext)
+    const {users, searchUsers, clearUsers} = useContext(GithubContext)
 
     const handleTextChange = (e) => {
         setText(e.target.value)
@@ -48,7 +48,7 @@ function UserSearch() {
       </div>
       {users.length > 0 && (
         <div className="flex items-end justify-center">
-        <button className='btn btn-ghost btn-lg bg-gray-500'>
+        <button className='btn btn-ghost btn-lg bg-gray-500' onClick={clearUsers}>
           Clear
         </button>
       </div>
