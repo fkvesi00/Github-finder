@@ -22,7 +22,7 @@ export const GithubProvider = ({children}) => {
             q: text
         })
 
-        const reposnse = await fetch(`https://api.github.com/search/users?q=filip`, {
+        const reposnse = await fetch(`${GITHUB_URL}/search/users?${params}`, {
             headers: {
                 Authorization : `token ${GITHUB_TOKEN}`,
             },
